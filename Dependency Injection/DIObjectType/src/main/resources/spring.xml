@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- type 1 -->
+    <!--<bean id= "engineerObject" class="com.InjectingObject.Engineer">
+		<property name="id" value="31"></property>
+		<property name="cheater">
+			<bean id ="cheater" class="com.InjectingObject.Cheater"/>
+		</property>
+	</bean> 
+	
+	<bean id= "otherengineerObject" class="com.InjectingObject.OtherEngineer">
+		<property name="cheat">
+			<bean id ="cheater" class="com.InjectingObject.Cheater"/>
+		</property>
+	</bean> --
+
+	<!-- Type 2 - using ref-->
+	<bean id ="cheaterObjectDefined" class="com.InjectingObject.Cheater"/>
+	<bean id= "engineerObject" class="com.InjectingObject.Engineer">
+		<property name="id" value="31"></property>
+		<property name="cheater" ref="cheaterObjectDefined"></property>
+	</bean> 
+	<bean id= "otherengineerObject" class="com.InjectingObject.OtherEngineer">
+		<property name="cheat" ref="cheaterObjectDefined"></property>
+	</bean> 
+</beans>

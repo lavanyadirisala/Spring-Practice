@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+  <!-- used for @anotation -->
+  <context:annotation-config/> 
+
+	<!--**********Autowiring byName*********-->
+	<!--<bean id="heart" class="com.Spring.Autowired.Heart"/>-->
+	<!-- Here the spring will go to Human Class and take dependency variable (Private Heart heart) 
+	 	and matches heart varible with beans id's presented.
+	 	Name of dependency varible == Name of beans id's--> 	
+	 <!--<bean id="human" class="com.Spring.Autowired.Human" autowire="byName"/> -->
+	 
+	 
+	 <!--*********Autowiring byType*********-->
+	 <!--<bean id="heartObjectType" class="com.Spring.Autowired.Heart"/>-->
+	 <!---here the spring will go to Human class and take dependency varibles type (Heart)
+	 	and matches Heart type with beans Class Type
+	 		Type of dependency variable == type of bean -->
+	 <!--<bean id="human" class="com.Spring.Autowired.Human" autowire="byType"/> -->
+	
+	<!--*********Autowiring Constructor*********-->
+	 <!--<bean id="heartObjectType" class="com.Spring.Autowired.Heart"/>-->
+	 <!---here the spring will go to Human class and If their is any constructor present then injection will be done
+	 	Human human = new Human(new heart());-->
+	 <!--<bean id="human" class="com.Spring.Autowired.Human" autowire="constructor"/> -->
+	 
+	 <!--*********@Autowired*********-->
+	 
+	 <bean id= "OctobusObjectType" class="com.Spring.Autowired.Heart">
+		 <property name="noOfHeart" value="3"></property>
+		 </bean>
+	 <bean id="heartObjectType" class="com.Spring.Autowired.Heart">
+		 <property name="noOfHeart" value="1"></property>		 
+		 </bean>
+	 <!---@autowired can be directly used in human class instead of here
+	    if autowiring for constructor @autowired at constructor 
+	    if autowiring at setmethod @autowired at setmethod -->
+	  <bean id="human" class="com.Spring.Autowired.Human" /> 
+	 
+	
+	  	
+	 	
+	 	
+	 	
+	 
+</beans>
